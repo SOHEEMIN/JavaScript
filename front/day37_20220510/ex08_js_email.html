@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--아이디 입력 input + @ + 셀렉트에서 받을 input + 셀렉트-->
+    <input type="text" id="userid" onblur="usernameCheck()"> @
+    <input type="text" id="userEmail">
+    <select id="id1" onchange="idSelect()">
+        <option value="naver.com">naver.com</option>
+        <option value="daum.net">daum.net</option>
+        <option value="nate.com">nate.com</option>
+        <option value="korea.com">korea.com</option>
+    </select>
+    <p id="select-result"></p>
+</body>
+    <script>
+        function idSelect(){
+            const id1 = document.getElementById("id1").value;
+            //const selectResult = document.getElementById("select-result");
+            console.log(`선택한 이메일: ${id1}`);
+            //selectResult.innerHTML=id1;
+            document.getElementById("userEmail").value = id1;
+        }
+        function usernameCheck(){
+            const userid = document.getElementById("userid").value;
+            const selectResult = document.getElementById("select-result");
+            if(userid.length>=5 && userid.length<=12){
+                selectResult.innerHTML = "좋은 아이디입니다.";
+            }else if(userid.length==0){
+                selectResult.innerHTML = "필수입력입니다."
+            }else{
+                selectResult.innerHTML="5~12자 이내로 입력해주세요."
+            }
+        }
+    </script>
+</html>

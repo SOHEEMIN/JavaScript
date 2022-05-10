@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--select태그를 이용하여 아무거나 4개를 선택하는 내용을 만들어봅시다.-->
+    <select id="fruits" onchange="fruitsSelect()">
+        <option value="애플망고">애플망고</option>
+        <option value="블루베리">블루베리</option>
+        <option value="수박">수박</option>
+        <option value="참외">참외</option>
+
+    </select>
+    <p id="select-result"></p>
+</body>
+    <script>
+        function fruitsSelect(){
+            console.log("함수호출");
+            const fruits = document.getElementById("fruits").value;
+            console.log(`선택한과일: ${fruits}`);
+            const selectResult = document.getElementById("select-result");
+            selectResult.innerHTML = `선택한 과일은 ${fruits} 입니다.`;
+        }
+    </script>
+</html>

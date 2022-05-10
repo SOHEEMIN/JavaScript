@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--성적계산하기
+
+    1. body영역
+        1. 점수 입력을 위한 input
+        2. 성적계산 함수 호출을 위한 button
+        3. 성적 출력을 위한 div
+    2. javascript
+        1. 입력받은 점수로 학점 판단
+        2. 90점 이상 A, 80점이상 B, 80점 미만 F
+        3. 성적출력 div에 A 또는 B또는 F출력하기-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>성적 계산기</h2>
+    점수: <input type="text" id="num1">
+    <button onclick="cal()">계산</button>
+    <div id="result">여기에 학점 출력</div>
+</body>
+<script>
+    function cal() {
+        let num1 = document.getElementById("num1").value;
+        console.log(`점수: ${num1}`);
+        num1 = parseInt(num1)
+        if (num1 >= 90 && num1 <= 100) {
+            grade = "A"
+        } else if (num1 >= 80 && num1 < 90) {
+            grade = "B"
+        } else if (num1 < 80 && num1 >= 0) {
+            grade = "F"
+        } else {
+            grade = "잘못입력하였습니다."
+        }
+        const result = document.getElementById("result");
+        result.innerHTML = grade;
+    }
+</script>
+
+</html>
