@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="id1"> 
+        안녕하세요
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <div id="ul-ex">
+
+    </div>
+    <button onclick="fun1()">클릭</button>
+    <button onclick="fun2()">ul만들기</button>
+    <button onclick="fun2()">for문 ul만들기</button>
+
+</body>
+<script>
+    function fun1(){
+        const div1 = document.getElementById("id1");
+        console.log(div1.innerHTML);  //id1의 시작과 종료 태그 사이가 innerHTML 적용
+        //h2가 적용된 반갑습니다.를 화면에 출력
+        div1.innerHTML = "<h2> 반갑습니다. </h2>";
+    }
+    function fun2(){     //댓글 만들기에 주로 이용되는 코드
+        const ulDiv = document.getElementById("ul-ex");
+        const ulElement = "<ul>" +
+                          "<li>1</li>"+
+                          "<li>2</li>"+
+                          "<li>3</li>"+
+                          "</ul>";
+        ulDiv.innerHTML = ulElement;
+    }
+    
+
+    function fun3(){     //fun(2)를 for문으로 변형해보기
+        const ulDiv = document.getElementById("ul-ex");
+        let ulElement = "<ul>";
+        for (let i=1;i<4;i++){
+            ulElement +="<li>" + i + "</li>";
+        }    
+        ulElement +="</ul>";
+        ulDiv.innerHTML = ulElement;             
+    }
+</script>
+</html>
