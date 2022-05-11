@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="text" id="eamil1"> @ <input type="text" id="email2"> 
+   <select name="" id="domain" onchange="emailSelect()">   <!--서버로 보낼 땐 name속성 필수!-->
+       <option value="">직접입력</option>
+       <option value="naver.com">네이버</option>
+       <option value="gmail.com">지메일</option>
+       <option value="hanmail.net">한메일</option>
+   </select>
+   <script>
+       function emailSelect(){
+        console.log("함수호출");
+        const domain = document.getElementById("domain");
+        console.log(`domain: ${domain}`);
+        const domainValue = document.getElementById("domain").value;
+        console.log(`domain: ${domainValue}`);
+        const email2 = document.getElementById("email2");
+        email2.value=domainValue;
+       }
+   </script>
+</body>
+</html>
